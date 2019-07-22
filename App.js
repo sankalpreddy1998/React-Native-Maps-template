@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React, {Fragment} from 'react';
+import React, {Fragment, Component} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -26,22 +26,26 @@ import {
 
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
-const App = () => {
-  return (
-  <View style={styles.container}>
-    <MapView
-      provider={PROVIDER_GOOGLE} // remove if not using Google Maps
-      style={styles.map}
-      region={{
-      latitude: 37.78825,
-      longitude: -122.4324,
-      latitudeDelta: 0.015,
-      longitudeDelta: 0.0121,
-    }}
-    >
-    </MapView>
-  </View>
-  );
+
+class App extends Component{
+
+  render(){
+    return (
+      <View style={styles.container}>
+        <MapView
+          provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+          style={styles.map}
+          region={{
+          latitude: 37.78825,
+          longitude: -122.4324,
+          latitudeDelta: 0.015,
+          longitudeDelta: 0.0121,
+        }}
+        >
+        </MapView>
+      </View>
+      );
+  }
 };
 
 const styles = StyleSheet.create({
